@@ -13,3 +13,9 @@ Ao separarmos o método de reajuste salário em uma classe de serviço não só 
 *“Uma classe deveria ter apenas um único motivo para mudar”*
 
 -- Robert (Uncle Bob) Martin
+
+Na classe reajuste de salário recebemos uma nova regra de validação e, assim sendo, pudemos melhorar ainda mais essa classe. Dividimos cada regra de validação em uma nova classe e unimos todas elas por uma interface em comum, um contrato que especifica um único método que todos devem ter em comum (validar(funcionario, aumento)). Dessa forma nós pudemos tornar a classe ReajusteService expansível sem precisar mexer nela, apenas criando uma nova classe com uma nova regra e adicionando a lista de validações. Dessa fizemos com que o código atenda ao 2º princípio do SOLID (O - Open Closed Principle) que significa que o código deve estar aberto para extensão mas fechado para modificação.
+
+*"Entidades de software (classes, módulos, funções, etc.) devem estar abertas para extensão, porém fechadas para modificação"*
+
+-- Bertrand Meyer
