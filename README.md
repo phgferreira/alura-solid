@@ -1,5 +1,6 @@
 # alura-solid
 >Status: Em Desenvolvimento
+
 Link do curso: [SOLID com Java: princípios da programação orientada a objetos](https://www.alura.com.br/curso-online-solid-orientacao-objetos-java)
 
 ### Aula 01 - Princípios da orientação a objetos
