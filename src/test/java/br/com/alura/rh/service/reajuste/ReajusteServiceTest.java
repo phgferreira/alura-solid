@@ -1,8 +1,12 @@
-package br.com.alura.rh.service;
+package br.com.alura.rh.service.reajuste;
 
 import br.com.alura.rh.ValidacaoException;
 import br.com.alura.rh.model.Cargo;
 import br.com.alura.rh.model.Funcionario;
+import br.com.alura.rh.service.reajuste.ReajusteService;
+import br.com.alura.rh.service.reajuste.ValidacaoPercentualReajuste;
+import br.com.alura.rh.service.reajuste.ValidacaoPeriodicidadeEntreReajustes;
+import br.com.alura.rh.service.reajuste.ValidacaoReajuste;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

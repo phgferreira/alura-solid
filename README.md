@@ -21,3 +21,5 @@ Na classe reajuste de salário recebemos uma nova regra de validação e, assim 
 *"Entidades de software (classes, módulos, funções, etc.) devem estar abertas para extensão, porém fechadas para modificação"*
 
 -- Bertrand Meyer
+
+### Aula 04 - Herança indesejada
