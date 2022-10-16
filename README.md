@@ -1,5 +1,5 @@
 # alura-solid
->Status: Em Desenvolvimento
+>Status: Concluído
 
 Link do curso: [SOLID com Java: princípios da programação orientada a objetos](https://www.alura.com.br/curso-online-solid-orientacao-objetos-java)
 
