@@ -29,3 +29,28 @@ De acordo com o 3º princípio do SOLID, chamado princípio de Liskov (Esse nome
 *"Se q(x) é uma propriedade demonstrável dos objetos x de tipo T, então q(y) deve ser verdadeiro para objetos y de tipo S, ou S é um subtipo de T."*
 
 -- Barbara Liskov
+
+### Aula 05 - Trabalhando com abstrações
+
+Nesse projeto, como consequência da aplicação do Open Closed Principle nós também aplicamos o 5º princípio do SOLID (I - Dependency Inversion Principle). Esse princípio diz que uma implamentação pode depender de uma abstração como uma interface ou classe abstrata mas a abstração não deve depender da implementação.
+
+*"Abstrações não devem depender de implementações. Implementações devem depender de abstrações."
+
+-- Robert (Uncle Bob) Martin
+
+O 4º princípio do SOLID diz a respeito de quando temos uma interface com muitos métodos, pode ocorrer de implementarmos essa interface em uma classe quen não vai utilizar todos os métodos da interface e isso significa que essa implementação está errada porque a classe está sendo forçada a tratar um método que não vai utilizar. A solução para esse tipo de problema é dividir em duas interfaces e nas classes que for necessário, implantar as duas interfaces. Podemos ainda melhorar o reaproveitamento fazendo uma interface herdar da outra.
+
+*"Uma classe não deveria ser forçada a depender de métodos qeu não utilizará."*
+
+-- Robert (Uncle Bob) Martin
+
+## Resumo dos 5 princípios do SOLID
+**S**ingle Responsability Principle: Uma classe deve ter uma única resposabilidade;
+
+**O**pen Closed Principle: A classe deve estar aberta a extensão mas fechada para modificação;
+
+**L**iskov Principle: Não deve utilizar herança quando os métodos e atributes não demonstram fazer sentido;
+
+**I**nterface Segregation Principle: Uma classe não deve ser forçada a implantar um método que não será utilizado;
+
+**D**ependency Inversion Principle: Uma implantação deve depender de uma interface mas uma interface jamais deve depender de uma implantação.
