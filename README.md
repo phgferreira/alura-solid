@@ -23,3 +23,9 @@ Na classe reajuste de salário recebemos uma nova regra de validação e, assim 
 -- Bertrand Meyer
 
 ### Aula 04 - Herança indesejada
+
+De acordo com o 3º princípio do SOLID, chamado princípio de Liskov (Esse nome veio da engenheira de software Barbara Liskov) precisamos ter muito cuidado ao utilizarmos da herança porque por mais que algumas coisas sejam parecidas não necessariamente elas são a mesma coisa e no código seus atributos e métodos podem não fazer sentido. Uma forma prática de manter esse princípio é observar se a classe filha continuará tendo o **mesmo** comportamento da classe mãe ao utilizarmos os métodos da classe mãe, se percebermos que a classe filha vai alterar algum comportamento que veio da classe mãe então não devemos usar herança mas talvez sim uma composição.
+
+*"Se q(x) é uma propriedade demonstrável dos objetos x de tipo T, então q(y) deve ser verdadeiro para objetos y de tipo S, ou S é um subtipo de T."*
+
+-- Barbara Liskov
