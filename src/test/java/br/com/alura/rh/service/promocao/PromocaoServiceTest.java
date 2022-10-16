@@ -2,6 +2,7 @@ package br.com.alura.rh.service.promocao;
 
 import br.com.alura.rh.ValidacaoException;
 import br.com.alura.rh.model.Cargo;
+import br.com.alura.rh.model.DadosPesssoais;
 import br.com.alura.rh.model.Funcionario;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,9 +13,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PromocaoServiceTest {
 
+    private DadosPesssoais dadosPesssoais;
+
+    void beforeEach() {
+        dadosPesssoais = new DadosPesssoais("Fulano de Tal", "12345678910");
+    }
     @Test @DisplayName("Deve promover de Assistente para Analista com sucesso")
     void cenario1() {
-        Funcionario funcionario = new Funcionario("Fulano de Tal", "12345678910", Cargo.ASSISTENTE, new BigDecimal("1500.00"));
+        Funcionario funcionario = new Funcionario(dadosPesssoais, Cargo.ASSISTENTE, new BigDecimal("1500.00"));
 
         PromocaoService servicoPromocao = new PromocaoService();
         servicoPromocao.promover(funcionario,true);
@@ -25,7 +31,7 @@ class PromocaoServiceTest {
 
     @Test @DisplayName("Deve promover de Analista para Especialista com sucesso")
     void cenario2() {
-        Funcionario funcionario = new Funcionario("Fulano de Tal", "12345678910", Cargo.ANALISTA, new BigDecimal("2500.00"));
+        Funcionario funcionario = new Funcionario(dadosPesssoais, Cargo.ANALISTA, new BigDecimal("2500.00"));
 
         PromocaoService servicoPromocao = new PromocaoService();
         servicoPromocao.promover(funcionario,true);
@@ -36,7 +42,7 @@ class PromocaoServiceTest {
 
     @Test @DisplayName("Deve promover de Especialista para Gerente com sucesso")
     void cenario3() {
-        Funcionario funcionario = new Funcionario("Fulano de Tal", "12345678910", Cargo.ESPECIALISTA, new BigDecimal("3500.00"));
+        Funcionario funcionario = new Funcionario(dadosPesssoais, Cargo.ESPECIALISTA, new BigDecimal("3500.00"));
 
         PromocaoService servicoPromocao = new PromocaoService();
         servicoPromocao.promover(funcionario,true);
@@ -47,7 +53,7 @@ class PromocaoServiceTest {
 
     @Test @DisplayName("Deve exibir que Gerentes não podem ser promovidos")
     void cenario4() {
-        Funcionario funcionario = new Funcionario("Fulano de Tal", "12345678910", Cargo.GERENTE, new BigDecimal("5000.00"));
+        Funcionario funcionario = new Funcionario(dadosPesssoais, Cargo.GERENTE, new BigDecimal("5000.00"));
 
         PromocaoService servicoPromocao = new PromocaoService();
         try {
@@ -63,7 +69,7 @@ class PromocaoServiceTest {
 
     @Test @DisplayName("Deve exibir que Assistente não pode ser promovido porque não atingiu a meta")
     void cenario5() {
-        Funcionario funcionario = new Funcionario("Fulano de Tal", "12345678910", Cargo.ASSISTENTE, new BigDecimal("1500.00"));
+        Funcionario funcionario = new Funcionario(dadosPesssoais, Cargo.ASSISTENTE, new BigDecimal("1500.00"));
 
         PromocaoService servicoPromocao = new PromocaoService();
         try {
@@ -79,7 +85,7 @@ class PromocaoServiceTest {
 
     @Test @DisplayName("Deve exibir que Analista não pode ser promovido porque não atingiu a meta")
     void cenario6() {
-        Funcionario funcionario = new Funcionario("Fulano de Tal", "12345678910", Cargo.ANALISTA, new BigDecimal("2500.00"));
+        Funcionario funcionario = new Funcionario(dadosPesssoais, Cargo.ANALISTA, new BigDecimal("2500.00"));
 
         PromocaoService servicoPromocao = new PromocaoService();
         try {
@@ -95,7 +101,7 @@ class PromocaoServiceTest {
 
     @Test @DisplayName("Deve exibir que Especialista não pode ser promovido porque não atingiu a meta")
     void cenario7() {
-        Funcionario funcionario = new Funcionario("Fulano de Tal", "12345678910", Cargo.ESPECIALISTA, new BigDecimal("3500.00"));
+        Funcionario funcionario = new Funcionario(dadosPesssoais, Cargo.ESPECIALISTA, new BigDecimal("3500.00"));
 
         PromocaoService servicoPromocao = new PromocaoService();
         try {
@@ -111,7 +117,7 @@ class PromocaoServiceTest {
 
     @Test @DisplayName("Indepentende da meta deve exibir primeiro que Gerentes não podem ser promovidos")
     void cenario8() {
-        Funcionario funcionario = new Funcionario("Fulano de Tal", "12345678910", Cargo.GERENTE, new BigDecimal("5000.00"));
+        Funcionario funcionario = new Funcionario(dadosPesssoais, Cargo.GERENTE, new BigDecimal("5000.00"));
 
         PromocaoService servicoPromocao = new PromocaoService();
         try {

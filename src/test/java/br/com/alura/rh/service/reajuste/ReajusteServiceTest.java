@@ -2,6 +2,7 @@ package br.com.alura.rh.service.reajuste;
 
 import br.com.alura.rh.ValidacaoException;
 import br.com.alura.rh.model.Cargo;
+import br.com.alura.rh.model.DadosPesssoais;
 import br.com.alura.rh.model.Funcionario;
 import br.com.alura.rh.service.reajuste.ReajusteService;
 import br.com.alura.rh.service.reajuste.ValidacaoPercentualReajuste;
@@ -20,13 +21,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ReajusteServiceTest {
 
+    private DadosPesssoais dadosPesssoais;
     private Funcionario funcionario;
 
     private ReajusteService servicoDeReajuste;
 
     @BeforeEach
     void setup() {
-        funcionario = new Funcionario("Fulano", "12345678910", Cargo.ANALISTA, new BigDecimal("2000.00"));
+        dadosPesssoais = new DadosPesssoais("Fulano de Tal", "12345678910");
+        funcionario = new Funcionario(dadosPesssoais, Cargo.ANALISTA, new BigDecimal("2000.00"));
         servicoDeReajuste = new ReajusteService( this.geraValidacoes() );
     }
 
